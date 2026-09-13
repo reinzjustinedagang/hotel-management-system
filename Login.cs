@@ -1,26 +1,33 @@
+using HotelManagementSystem.Interface;
 using HotelManagementSystem.Model;
+using HotelManagementSystem.Repositories;
 using HotelManagementSystem.Services;
 
 namespace HotelManagementSystem
 {
     public partial class Login : Form
     {
+        private readonly IUserService service;
+
         public Login()
         {
             InitializeComponent();
+
+            IUserRepo repo = new UserRepository();
+            service = new UserService(repo);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void btnSignin_Click(object sender, EventArgs e)
+        private async void btnSignin_Click(object sender, EventArgs e)
         {
-            UserService user = new();
+            
             string username = this.tbUsername.Text;
             string password = this.tbPassword.Text;
 
-            User loggedUser = user.Login(username, password);
+            User loggedUser = await service.Login(username, password);
 
             if (username == "" || password == "")
                 MessageBox.Show("Username or Password is empty");
