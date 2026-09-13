@@ -151,7 +151,7 @@ HotelManagementSystem
 │   └── ...
 │
 ├── Database
-│   └── Database.cs
+│   └── DBConnection.cs
 │
 └── Program.cs
 ```
@@ -213,7 +213,6 @@ Windows Forms UI
 | .NET                | Application framework            |
 | MySQL               | Relational database              |
 | MySQL Connector/NET | MySQL database connectivity      |
-| ADO.NET             | Database access                  |
 | Visual Studio       | Development environment          |
 | Git                 | Version control                  |
 | GitHub              | Source code hosting              |
@@ -494,7 +493,6 @@ This project is also intended as a learning project for developing practical ski
 * Windows Forms development
 * SQL and database design
 * MySQL
-* ADO.NET
 * Repository Pattern
 * Service Layer
 * Layered Architecture
